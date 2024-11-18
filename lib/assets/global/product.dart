@@ -1,8 +1,6 @@
-import 'package:app_loja/assets/components/banner.dart';
 import 'package:app_loja/assets/components/card_product.dart';
 import 'package:app_loja/assets/components/colors.dart';
 import 'package:app_loja/assets/components/customappbar.dart';
-import 'package:app_loja/assets/components/text.dart';
 import 'package:flutter/material.dart';
 
 class Product extends StatelessWidget {
@@ -13,206 +11,63 @@ class Product extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.backgroud,
       body: ListView(
-        children: [
+        children: const [
           Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CustomAppBar(),
-              const SizedBox(
-                height: 20,
-              ),
-              const BannerProduct(),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                'Destaques da semana',
-                style: AppTextStyles.Text30,
-              ),
-              Container(
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                child: const Row(
+              CustomAppBar(),
+              SizedBox(height: 20,),
+              Padding(
+                padding: EdgeInsets.only(left: 20, right: 20),
+                child: Column(
                   children: [
-                    CardProduct(
-                      nomeProduto: 'Produto 1',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    CardProduct(
-                      nomeProduto: 'Produto 2',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    CardProduct(
-                      nomeProduto: 'Produto 3',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
+                Row(
+                  children: [
+                    CustomCardProduct(productName: 'produto', productPrice: 'R\$ 100', imagePath: 'lib/assets/images/avatar.jpg'),
+                    SizedBox(width: 10,),
+                    CustomCardProduct(productName: 'produto', productPrice: 'R\$ 100', imagePath: 'lib/assets/images/avatar.jpg'),
                   ],
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Container(
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                child: const Row(
+                Row(
                   children: [
-                    CardProduct(
-                      nomeProduto: 'Produto 4',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    CardProduct(
-                      nomeProduto: 'Produto 5',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    CardProduct(
-                      nomeProduto: 'Produto 6',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
+                    CustomCardProduct(productName: 'produto', productPrice: 'R\$ 100', imagePath: 'lib/assets/images/avatar.jpg'),
+                    SizedBox(width: 10,),
+                    CustomCardProduct(productName: 'produto', productPrice: 'R\$ 100', imagePath: 'lib/assets/images/avatar.jpg'),
                   ],
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Container(
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                child: const Row(
+                Row(
                   children: [
-                    CardProduct(
-                      nomeProduto: 'Produto 4',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    CardProduct(
-                      nomeProduto: 'Produto 5',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    CardProduct(
-                      nomeProduto: 'Produto 6',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
+                    CustomCardProduct(productName: 'produto', productPrice: 'R\$ 100', imagePath: 'lib/assets/images/avatar.jpg'),
+                    SizedBox(width: 10,),
+                    CustomCardProduct(productName: 'produto', productPrice: 'R\$ 100', imagePath: 'lib/assets/images/avatar.jpg'),
                   ],
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Container(
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                child: const Row(
+                Row(
                   children: [
-                    CardProduct(
-                      nomeProduto: 'Produto 4',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    CardProduct(
-                      nomeProduto: 'Produto 5',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    CardProduct(
-                      nomeProduto: 'Produto 6',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
+                    CustomCardProduct(productName: 'produto', productPrice: 'R\$ 100', imagePath: 'lib/assets/images/avatar.jpg'),
+                    SizedBox(width: 10,),
+                    CustomCardProduct(productName: 'produto', productPrice: 'R\$ 100', imagePath: 'lib/assets/images/avatar.jpg'),
                   ],
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Container(
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                child: const Row(
+                Row(
                   children: [
-                    CardProduct(
-                      nomeProduto: 'Produto 4',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    CardProduct(
-                      nomeProduto: 'Produto 5',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    CardProduct(
-                      nomeProduto: 'Produto 6',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
+                    CustomCardProduct(productName: 'produto', productPrice: 'R\$ 100', imagePath: 'lib/assets/images/avatar.jpg'),
+                    SizedBox(width: 10,),
+                    CustomCardProduct(productName: 'produto', productPrice: 'R\$ 100', imagePath: 'lib/assets/images/avatar.jpg'),
                   ],
                 ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Container(
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                child: const Row(
+                Row(
                   children: [
-                    CardProduct(
-                      nomeProduto: 'Produto 4',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    CardProduct(
-                      nomeProduto: 'Produto 5',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    CardProduct(
-                      nomeProduto: 'Produto 6',
-                      preco: 'R\$ 10,00',
-                      imagemAsset: 'lib/assets/images/logo.png',
-                    ),
+                    CustomCardProduct(productName: 'produto', productPrice: 'R\$ 100', imagePath: 'lib/assets/images/avatar.jpg'),
+                    SizedBox(width: 10,),
+                    CustomCardProduct(productName: 'produto', productPrice: 'R\$ 100', imagePath: 'lib/assets/images/avatar.jpg'),
                   ],
                 ),
-              ),
-            ],
+                  ],
+                ),
+              )
+              
+            ]
           ),
         ],
       ),

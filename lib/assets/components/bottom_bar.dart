@@ -16,7 +16,8 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      elevation: 1,
+      elevation: 5,
+      iconSize: 30,
         currentIndex: selectedIndex,
         backgroundColor: AppColors.backgroud,
         selectedItemColor: AppColors.primary,

@@ -60,12 +60,78 @@ class CardProduct1 extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: 180,
-          width: 180,
-          color: Colors.blue,
+          height: 150,
+          width: 150,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            image: const DecorationImage(
+              image: AssetImage('lib/assets/images/logo.png'), 
+              fit: BoxFit.cover, 
+            ),
+          ),
         ),
         const Text('Nome do produto', style: AppTextStyles.Text12,),
         const Text('Preço', style: AppTextStyles.Text12,),
+      ],
+    );
+  }
+}
+
+
+class CustomCircleAvatar extends StatelessWidget {
+  final String imagePath;
+
+
+  const CustomCircleAvatar({super.key, required this.imagePath});
+
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      radius: 50,
+      backgroundImage: AssetImage(imagePath),
+    );
+  }
+}
+
+
+
+class CustomCardProduct extends StatelessWidget {
+  final String productName;
+  final String productPrice;
+  final String imagePath;
+
+  const CustomCardProduct({
+    super.key,
+    required this.productName,
+    required this.productPrice,
+    required this.imagePath,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(8),
+          width: 180,
+          height: 260,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            image: DecorationImage(
+              image: AssetImage(imagePath), 
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        Text(
+          productName,
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+        Text(
+          productPrice,
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+        ),
       ],
     );
   }

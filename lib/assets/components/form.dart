@@ -1,7 +1,42 @@
-import 'package:app_loja/assets/components/button.dart';
-import 'package:app_loja/assets/components/colors.dart';
-import 'package:app_loja/assets/global/root.dart';
 import 'package:flutter/material.dart';
+import 'package:app_loja/assets/components/colors.dart';
+import 'package:app_loja/assets/components/button.dart';
+import 'package:app_loja/assets/global/cadastro.dart';
+import 'package:app_loja/assets/global/root.dart';
+
+
+class CustomTextField extends StatelessWidget {
+  final String labelText;
+  final TextInputType keyboardType;
+  final bool obscureText;
+
+  const CustomTextField({
+    super.key,
+    required this.labelText,
+    required this.keyboardType,
+    this.obscureText = false, 
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      obscureText: obscureText,
+      keyboardType: keyboardType,
+      decoration: InputDecoration(
+        labelText: labelText,
+        focusedBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: AppColors.primary, width: 2.0),
+        ),
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: AppColors.primary, width: 1.0),
+        ),
+        border: const OutlineInputBorder(
+          borderSide: BorderSide(color: AppColors.secondary, width: 1.0),
+        ),
+      ),
+    );
+  }
+}
 
 class Cform extends StatelessWidget {
   const Cform({super.key});
@@ -12,48 +47,40 @@ class Cform extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: Column(
         children: [
-          TextFormField(
+          const CustomTextField(
+            labelText: 'Email',
             keyboardType: TextInputType.emailAddress,
-            decoration: const InputDecoration(
-              labelText: 'Email',
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: AppColors.primary, width: 2.0),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: AppColors.primary, width: 1.0),
-              ),
-              border: OutlineInputBorder(
-                borderSide: BorderSide(color: AppColors.secondary, width: 1.0),
-              ),
-            ),
           ),
           const SizedBox(
             height: 16,
           ),
-          TextFormField(
+          const CustomTextField(
+            labelText: 'Sua Senha',
             keyboardType: TextInputType.number,
-            decoration: const InputDecoration(
-              labelText: 'Sua Senha',
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: AppColors.primary, width: 2.0),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: AppColors.primary, width: 1.0),
-              ),
-              border: OutlineInputBorder(
-                borderSide: BorderSide(color: AppColors.secondary, width: 1.0),
-              ),
-            ),
+            obscureText: true, 
           ),
-          const SizedBox(height: 16,),
-          PrymaryButton(onPressed: (){
-            Navigator.push(
+          const SizedBox(height: 16),
+          // Botão de login
+          PrymaryButton(
+            onPressed: () {
+              Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const RootPage()),
               );
-          }, text: 'Entrar',),
-          const SizedBox(height: 16,),
-          SecundaryButton(onPressed: (){}, text: 'Cadastrar',),
+            },
+            text: 'Entrar',
+          ),
+          const SizedBox(height: 16),
+          // Botão de cadastro
+          SecundaryButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Cadastro()),
+              );
+            },
+            text: 'Cadastrar',
+          ),
         ],
       ),
     );
